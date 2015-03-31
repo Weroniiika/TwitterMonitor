@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://Microsoft.ServiceModel.Samples" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" targetNamespace="http://Microsoft.ServiceModel.Samples" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://Microsoft.ServiceModel.Samples/Imports">
+      <xsd:import schemaLocation="http://localhost:8080/TwitterWCFService/?xsd=xsd0" namespace="http://Microsoft.ServiceModel.Samples" />
+      <xsd:import schemaLocation="http://localhost:8080/TwitterWCFService/?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/TwitterWCFService" />
+      <xsd:import schemaLocation="http://localhost:8080/TwitterWCFService/?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="ITwitterService_InitStreamAndSaveData_InputMessage">
+    <wsdl:part name="parameters" element="tns:InitStreamAndSaveData" />
+  </wsdl:message>
+  <wsdl:message name="ITwitterService_InitStreamAndSaveData_OutputMessage">
+    <wsdl:part name="parameters" element="tns:InitStreamAndSaveDataResponse" />
+  </wsdl:message>
+  <wsdl:message name="ITwitterService_InitStreamAndSaveData_StreamFaultInfoFault_FaultMessage">
+    <wsdl:part xmlns:q1="http://schemas.datacontract.org/2004/07/TwitterWCFService" name="detail" element="q1:StreamFaultInfo" />
+  </wsdl:message>
+  <wsdl:message name="ITwitterService_HashtagsFrequencyData_InputMessage">
+    <wsdl:part name="parameters" element="tns:HashtagsFrequencyData" />
+  </wsdl:message>
+  <wsdl:message name="ITwitterService_HashtagsFrequencyData_OutputMessage">
+    <wsdl:part name="parameters" element="tns:HashtagsFrequencyDataResponse" />
+  </wsdl:message>
+  <wsdl:message name="ITwitterService_HashtagsFrequencyData_StringFault_FaultMessage">
+    <wsdl:part xmlns:q2="http://schemas.microsoft.com/2003/10/Serialization/" name="detail" element="q2:string" />
+  </wsdl:message>
+  <wsdl:message name="ITwitterService_Pictures_InputMessage">
+    <wsdl:part name="parameters" element="tns:Pictures" />
+  </wsdl:message>
+  <wsdl:message name="ITwitterService_Pictures_OutputMessage">
+    <wsdl:part name="parameters" element="tns:PicturesResponse" />
+  </wsdl:message>
+  <wsdl:message name="ITwitterService_Pictures_StringFault_FaultMessage">
+    <wsdl:part xmlns:q3="http://schemas.microsoft.com/2003/10/Serialization/" name="detail" element="q3:string" />
+  </wsdl:message>
+  <wsdl:message name="ITwitterService_Sentiment_InputMessage">
+    <wsdl:part name="parameters" element="tns:Sentiment" />
+  </wsdl:message>
+  <wsdl:message name="ITwitterService_Sentiment_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SentimentResponse" />
+  </wsdl:message>
+  <wsdl:message name="ITwitterService_Sentiment_StringFault_FaultMessage">
+    <wsdl:part xmlns:q4="http://schemas.microsoft.com/2003/10/Serialization/" name="detail" element="q4:string" />
+  </wsdl:message>
+  <wsdl:portType name="ITwitterService">
+    <wsdl:operation name="InitStreamAndSaveData">
+      <wsdl:input wsaw:Action="http://Microsoft.ServiceModel.Samples/ITwitterService/InitStreamAndSaveData" message="tns:ITwitterService_InitStreamAndSaveData_InputMessage" />
+      <wsdl:output wsaw:Action="http://Microsoft.ServiceModel.Samples/ITwitterService/InitStreamAndSaveDataResponse" message="tns:ITwitterService_InitStreamAndSaveData_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://Microsoft.ServiceModel.Samples/ITwitterService/InitStreamAndSaveDataStreamFaultInfoFault" name="StreamFaultInfoFault" message="tns:ITwitterService_InitStreamAndSaveData_StreamFaultInfoFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="HashtagsFrequencyData">
+      <wsdl:input wsaw:Action="http://Microsoft.ServiceModel.Samples/ITwitterService/HashtagsFrequencyData" message="tns:ITwitterService_HashtagsFrequencyData_InputMessage" />
+      <wsdl:output wsaw:Action="http://Microsoft.ServiceModel.Samples/ITwitterService/HashtagsFrequencyDataResponse" message="tns:ITwitterService_HashtagsFrequencyData_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://Microsoft.ServiceModel.Samples/ITwitterService/HashtagsFrequencyDataStringFault" name="StringFault" message="tns:ITwitterService_HashtagsFrequencyData_StringFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Pictures">
+      <wsdl:input wsaw:Action="http://Microsoft.ServiceModel.Samples/ITwitterService/Pictures" message="tns:ITwitterService_Pictures_InputMessage" />
+      <wsdl:output wsaw:Action="http://Microsoft.ServiceModel.Samples/ITwitterService/PicturesResponse" message="tns:ITwitterService_Pictures_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://Microsoft.ServiceModel.Samples/ITwitterService/PicturesStringFault" name="StringFault" message="tns:ITwitterService_Pictures_StringFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Sentiment">
+      <wsdl:input wsaw:Action="http://Microsoft.ServiceModel.Samples/ITwitterService/Sentiment" message="tns:ITwitterService_Sentiment_InputMessage" />
+      <wsdl:output wsaw:Action="http://Microsoft.ServiceModel.Samples/ITwitterService/SentimentResponse" message="tns:ITwitterService_Sentiment_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://Microsoft.ServiceModel.Samples/ITwitterService/SentimentStringFault" name="StringFault" message="tns:ITwitterService_Sentiment_StringFault_FaultMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+</wsdl:definitions>

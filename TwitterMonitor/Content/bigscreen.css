@@ -1,0 +1,138 @@
+﻿div .centered {
+    min-width:800px;
+    width:40%;
+    height:64%;
+}
+div .centered p {
+    margin: 8px;
+    z-index:-1;
+}
+
+div #bluelines p {
+    padding: 15px;
+    margin: 10px 30px;
+    text-align: justify;
+    justify-content: space-between;
+}
+
+
+div .label-field{
+    margin-top: 5px;
+}
+
+a.square {
+    margin-top: 10%;
+    height: 230px;
+	width: 230px;
+    padding: 15px;
+    border-radius: 15px;
+    border-style:hidden;
+    text-decoration: none;
+    display:inline-block;
+}
+
+/*square colors*/
+.square span {
+    font-size: xx-large;
+    font-weight: 700;
+    height: inherit;
+	width: inherit;
+    text-align:center;
+    vertical-align: middle;
+    display:table-cell;
+    color:white;
+}
+
+
+header {
+    top: 10%;
+    margin: 0 auto;
+    min-width: 300px;
+}
+
+header #title a{
+    padding:15px 60px;
+    display:table-cell; 
+}
+
+
+
+nav {
+    width:96%;
+    height:auto;
+    margin-left:2%;
+    margin-right:2%;
+    position:absolute;
+    z-index:-1;
+}
+
+nav a {
+    width:27%;
+    position: relative;
+    height: auto;
+    float: left;
+    color: white;
+    text-align:center;
+    vertical-align: middle;
+    display:inline-block;
+    padding: 3px 6px 12px 6px;
+    border-radius: 4px;
+    margin: 0 1%;
+    margin-top:-28px;
+}
+
+footer p{
+    color: black;
+    bottom: 2px;
+    margin: 0;
+}
+
+/*Animations and hover transitions*/
+a.square:hover {
+    -webkit-animation: bumping 0.75s;
+    animation-fill-mode: forwards;
+    animation: bumping 0.75s;
+    -webkit-animation-iteration-count: 2;
+    animation-iteration-count: 2;
+}
+
+nav #green:hover {
+    -webkit-animation:appear 2s;
+    animation: appear 2s;
+}
+
+nav #orange:hover{
+    -webkit-animation:appear 2s;
+    animation: appear 2s;
+}
+
+nav #blue:hover {
+    -webkit-animation:appear 2s;
+    animation: appear 2s;
+}
+
+@keyframes bumping {
+    0%      {margin-top: 0;  }
+    50%     {margin-top: -8px;-webkit-transform: rotateY(15deg); transform: rotateY(15deg) }
+    100%    {margin-top: 0; }
+}
+
+@-webkit-keyframes bumping {
+    0%      {margin-top: 0;  }
+    50%     {margin-top: -8px;-webkit-transform: rotateY(15deg); transform: rotateY(15deg) }
+    100%    {margin-top: 0; }
+}
+
+@keyframes appear {
+    0%      { margin-top: -28px;}
+    25%     { margin-top: -5px; padding-bottom: 5px;}
+    75%     { margin-top: -5px; padding-bottom: 5px;}
+    100%    { margin-top: -28px;}
+}
+
+@-webkit-keyframes appear {
+    0%      { margin-top: -28px;}
+    25%     { margin-top: -5px; padding-bottom: 5px;}
+    75%     { margin-top: -5px; padding-bottom: 5px;}
+    100%    { margin-top: -28px;}
+}

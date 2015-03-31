@@ -1,0 +1,53 @@
+﻿@model TwitterMonitor.Models.RequestSpec
+
+@{
+    ViewBag.Title = "GetData";
+}
+
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>GetData</title>
+</head>
+<body>
+    @section Scripts
+    {
+        <script type="text/javascript" src="@Url.Content("~/Scripts/jquery.validate.js")"></script>
+        <script type="text/javascript" src="@Url.Content("~/Scripts/jquery.validate.unobtrusive.js")"></script>
+    }
+    <div class="centered" id="greenlines">
+        @using (Html.BeginForm("SendRequest", "GetData", FormMethod.Post))
+        {
+            <fieldset>
+                <legend>Specify your request</legend>
+                <div class="label-field">
+                    @Html.LabelFor(model => model.NumberTweets)
+                </div>
+                <div class="editor-field">
+                    @Html.TextBoxFor(model => model.NumberTweets) 
+                    @Html.ValidationMessageFor(model => model.NumberTweets)
+                </div>
+                <div class="label-field">
+                    @Html.LabelFor(model => model.TrackWord)
+                </div>
+                <div class="editor-field">
+                    @Html.TextBoxFor(model => model.TrackWord)
+                    @Html.ValidationMessageFor(model => model.TrackWord)
+                </div>
+                <div class="button" id="standard">
+                    <input type="submit" value="Send Request" />
+                </div>
+                <div class="exception">
+                    @if (Model != null)
+                    {
+                        if (Model.ExceptionMessage !=null)
+                        {
+                            <p>There was a problem with your request, but you can try again. See below for exception details.</p>
+                            <p id="exception-message">@Html.DisplayTextFor(model => model.ExceptionMessage)</p>
+                        }
+                    }
+                </div>
+            </fieldset>
+        }
+    </div>
+</body>
+

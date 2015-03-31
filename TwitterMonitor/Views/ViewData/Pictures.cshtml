@@ -1,0 +1,28 @@
+﻿@model TwitterMonitor.TwitterService.PicturesData
+@{
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Pictures</title>
+</head>
+<body>
+    <div class="centered" id="orangelines">
+        <div class="title">
+        <div id="back">
+            <a class="button" href=@Url.Action("Index", "ViewData", new { code = Model.Code })><input value="Back" type="submit"></a>
+        </div>
+            <p>Pictures for data with filter: "@Model.TrackWord", downloaded: @Model.CreatedAt</p>
+        </div>
+        <div class="scroll">
+        @foreach (var p in Model.Data) //if data came without .Data field = > null pointer exception
+        {
+            <p><img src="@Url.Content(p.PictureURL)" alt="Image" title="@p.Text"/></p>
+        }
+        </div>
+    </div>
+</body>
+</html>

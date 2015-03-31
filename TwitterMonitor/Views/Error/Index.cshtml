@@ -1,0 +1,21 @@
+﻿@model System.Web.Mvc.HandleErrorInfo
+
+@{
+    
+}
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Error</title>
+</head>
+<body>
+    <div class="centered" id="redlines">
+        <div class="alert alert-error">
+            An unexpected error has occurred.<br />
+            <a href=@Url.Action("Index","Main")> Go to main page</a>
+        </div>
+    </div>
+</body>
+</html>

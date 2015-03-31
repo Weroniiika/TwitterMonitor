@@ -1,0 +1,32 @@
+﻿@using TwitterMonitor.Models
+@model TwitterMonitor.Models.RequestSpec
+
+
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Success</title>
+</head>
+<body>
+    <div class="centered" id="greenlines"> 
+        <span> Request succeeded!</span>
+        <div>
+            @Html.LabelFor(m => m.NumberTweets)
+            @Html.ValueFor(m=> m.NumberTweets)
+        </div>
+        <div>
+            @Html.LabelFor(m => m.TrackWord)
+            @Html.ValueFor(m => m.TrackWord)
+        </div>
+        <div>
+            <span>Remember the code!</span>
+            <span>It is necessary to access the data!</span>
+            <div>
+                @Html.LabelFor(m => m.Code):
+                @Html.ValueFor(m => m.Code)
+            </div>
+        </div>
+        <div class="button" id="standard">
+            <a href=@Url.Action("Index", "ViewData", new { code = Model.Code })><input value="Present data" type="submit"></a>
+        </div>
+    </div>
+</body>

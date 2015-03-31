@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/TwitterWCFService" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/TwitterWCFService" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:complexType name="RequestInfo">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Code" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NumberTweets" type="xs:int" />
+      <xs:element minOccurs="0" name="TrackWord" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="RequestInfo" nillable="true" type="tns:RequestInfo" />
+  <xs:complexType name="StreamFaultInfo">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Description" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="RequestInfo" nillable="true" type="tns:RequestInfo" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="StreamFaultInfo" nillable="true" type="tns:StreamFaultInfo" />
+  <xs:complexType name="HashtagsCountData">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:RequestData">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Data" nillable="true" type="tns:ArrayOfHashtagData" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="HashtagsCountData" nillable="true" type="tns:HashtagsCountData" />
+  <xs:complexType name="RequestData">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Code" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CreatedAt" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="EndedAt" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="TrackWord" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="RequestData" nillable="true" type="tns:RequestData" />
+  <xs:complexType name="ArrayOfHashtagData">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="HashtagData" nillable="true" type="tns:HashtagData" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfHashtagData" nillable="true" type="tns:ArrayOfHashtagData" />
+  <xs:complexType name="HashtagData">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="HashtagId" type="xs:int" />
+      <xs:element minOccurs="0" name="HashtagWord" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TweetCount" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="HashtagData" nillable="true" type="tns:HashtagData" />
+  <xs:complexType name="PicturesData">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:RequestData">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Data" nillable="true" type="tns:ArrayOfTweetPictureData" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="PicturesData" nillable="true" type="tns:PicturesData" />
+  <xs:complexType name="ArrayOfTweetPictureData">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="TweetPictureData" nillable="true" type="tns:TweetPictureData" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfTweetPictureData" nillable="true" type="tns:ArrayOfTweetPictureData" />
+  <xs:complexType name="TweetPictureData">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="PictureURL" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Text" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TweetId" type="xs:long" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="TweetPictureData" nillable="true" type="tns:TweetPictureData" />
+  <xs:complexType name="SentimentData">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:RequestData">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="NegativeWordsCount" type="xs:int" />
+          <xs:element minOccurs="0" name="NegativeWordsList" nillable="true" type="tns:ArrayOfWordCount" />
+          <xs:element minOccurs="0" name="PositiveWordsCount" type="xs:int" />
+          <xs:element minOccurs="0" name="PositiveWordsList" nillable="true" type="tns:ArrayOfWordCount" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="SentimentData" nillable="true" type="tns:SentimentData" />
+  <xs:complexType name="ArrayOfWordCount">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="WordCount" nillable="true" type="tns:WordCount" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfWordCount" nillable="true" type="tns:ArrayOfWordCount" />
+  <xs:complexType name="WordCount">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Count" type="xs:int" />
+      <xs:element minOccurs="0" name="EmotionWord" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="WordCount" nillable="true" type="tns:WordCount" />
+</xs:schema>

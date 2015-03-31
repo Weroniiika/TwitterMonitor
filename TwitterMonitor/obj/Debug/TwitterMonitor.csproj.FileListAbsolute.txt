@@ -1,0 +1,16 @@
+C:\Users\Weronika\Documents\Visual Studio 2013\Projects\TwitterMonitor\TwitterMonitor\bin\TwitterMonitor.dll.config
+C:\Users\Weronika\Documents\Visual Studio 2013\Projects\TwitterMonitor\TwitterMonitor\bin\TwitterMonitor.dll
+C:\Users\Weronika\Documents\Visual Studio 2013\Projects\TwitterMonitor\TwitterMonitor\bin\TwitterMonitor.pdb
+C:\Users\Weronika\Documents\Visual Studio 2013\Projects\TwitterMonitor\TwitterMonitor\bin\System.Web.Helpers.dll
+C:\Users\Weronika\Documents\Visual Studio 2013\Projects\TwitterMonitor\TwitterMonitor\bin\System.Web.Razor.dll
+C:\Users\Weronika\Documents\Visual Studio 2013\Projects\TwitterMonitor\TwitterMonitor\bin\System.Web.Webpages.Deployment.dll
+C:\Users\Weronika\Documents\Visual Studio 2013\Projects\TwitterMonitor\TwitterMonitor\bin\System.Web.Webpages.dll
+C:\Users\Weronika\Documents\Visual Studio 2013\Projects\TwitterMonitor\TwitterMonitor\bin\System.Web.Webpages.Razor.dll
+C:\Users\Weronika\Documents\Visual Studio 2013\Projects\TwitterMonitor\TwitterMonitor\bin\System.Web.Razor.xml
+C:\Users\Weronika\Documents\Visual Studio 2013\Projects\TwitterMonitor\TwitterMonitor\bin\System.Web.Webpages.xml
+C:\Users\Weronika\Documents\Visual Studio 2013\Projects\TwitterMonitor\TwitterMonitor\bin\System.Web.Webpages.Deployment.xml
+C:\Users\Weronika\Documents\Visual Studio 2013\Projects\TwitterMonitor\TwitterMonitor\bin\System.Web.Webpages.Razor.xml
+C:\Users\Weronika\Documents\Visual Studio 2013\Projects\TwitterMonitor\TwitterMonitor\bin\System.Web.Helpers.xml
+C:\Users\Weronika\Documents\Visual Studio 2013\Projects\TwitterMonitor\TwitterMonitor\obj\Debug\TwitterMonitor.csprojResolveAssemblyReference.cache
+C:\Users\Weronika\Documents\Visual Studio 2013\Projects\TwitterMonitor\TwitterMonitor\obj\Debug\TwitterMonitor.dll
+C:\Users\Weronika\Documents\Visual Studio 2013\Projects\TwitterMonitor\TwitterMonitor\obj\Debug\TwitterMonitor.pdb

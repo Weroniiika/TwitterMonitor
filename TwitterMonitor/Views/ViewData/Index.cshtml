@@ -1,0 +1,52 @@
+﻿@model TwitterMonitor.Models.PresentationSpec
+
+@{
+    ViewBag.Title = "ViewData";
+}
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>ViewData</title>
+</head>
+<body>
+    @section Scripts
+    {
+        <script type="text/javascript" src="@Url.Content("~/Scripts/jquery.validate.js")"></script>
+        <script type="text/javascript" src="@Url.Content("~/Scripts/jquery.validate.unobtrusive.js")"></script>
+    }
+    <div class="centered" id="orangelines"> 
+        @using (Html.BeginForm("Show", "ViewData", FormMethod.Post))
+        {            
+            <fieldset>
+                <legend>Specify presentation</legend>
+                <div class="label-field">
+                    @Html.Label("Code to your data:")
+                </div>
+                <div class="editor-field">
+                    @Html.TextBoxFor(model => model.CODE)
+                    @Html.ValidationMessageFor(model => model.CODE)
+                </div>
+                <div class="label-field">
+                    @Html.Label("Choose presentation type:")
+                </div>
+                <div class="editor-field">
+                    @foreach (var choice in Model.Presentations) {
+                        @Html.RadioButtonFor(v => v.selectedPresentationId , choice.Id) @choice.Text
+                    }
+                    @Html.ValidationMessageFor(model => model.selectedPresentationId)
+                 </div>
+                <div class="exception">
+                    @if (Model != null)
+                    {
+                        if (Model.ExceptionMessage != null)
+                        {
+                            <p id="exception-message">@Html.DisplayTextFor(model => model.ExceptionMessage)</p>
+                        }
+                    }
+                </div>
+                <div class="button" id="standard">
+                    <input type="submit" value="Show" />
+                </div>
+            </fieldset>
+        }
+    </div>
+</body>

@@ -1,0 +1,37 @@
+﻿@model TwitterMonitor.TwitterService.SentimentData
+@{
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Hashtags</title>
+</head>
+<body>
+    <div class="centered" id="orangelines">
+        <div class="title">
+            <div id="back">
+                <a class="button" href=@Url.Action("Index", "ViewData", new { code = Model.Code })><input value="Back" type="submit"></a>
+            </div>
+            <p>Words counts for data with filter: "@Model.TrackWord", downloaded: @Model.CreatedAt </p>
+        </div>
+        <div class="scroll">
+            <p>Top 5 negative words:</p>
+            @foreach (var word in Model.NegativeWordsList) //if data came without .Data field = > null pointer exception
+            {
+                <p><span>@word.EmotionWord: </span><span>@word.Count</span></p>
+            }
+            <p>Total negative words: @Model.NegativeWordsCount</p>
+
+            <p>Top 5 positive words:</p>
+            @foreach (var word in Model.PositiveWordsList) //if data came without .Data field = > null pointer exception
+            {
+                <p><span>@word.EmotionWord: </span><span>@word.Count</span></p>
+            }
+            <p>Total positive words: @Model.PositiveWordsCount</p>
+        </div>
+    </div>
+</body>
+</html>

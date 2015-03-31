@@ -1,0 +1,39 @@
+﻿@model System.Web.Mvc.HandleErrorInfo
+
+@{
+
+}
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Error</title>
+</head>
+<body>
+    <div class="centered" id="redlines">
+        <div class="alert alert-error">
+            An unexpected error has occurred. <a href="javascript:history.go(-1)">Click here</a> if you'd like to go back and try that again.
+        </div>
+        @if (HttpContext.Current.IsDebuggingEnabled) { 
+        <div>
+            @if (Model != null)
+            {
+                <div>
+                    <p>
+                        <b>Exception:</b> @Model.Exception.Message<br />
+                        <b>Controller:</b> @Model.ControllerName<br />
+                        <b>Action:</b> @Model.ActionName
+                    </p>
+                    <div>
+                        <pre>
+                        @Model.Exception.StackTrace
+                        </pre>
+                    </div>
+                </div>
+            }
+        </div>
+        }
+</div>
+</body>
+</html>

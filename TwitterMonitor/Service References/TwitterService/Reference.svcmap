@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="b68b94c1-7762-4b37-b710-ac155b3f5c76" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://localhost:8080/TwitterWCFService/" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="item1.wsdl" MetadataType="Wsdl" ID="9a8d4285-f6e2-436d-b602-f48992d00117" SourceId="1" SourceUrl="http://localhost:8080/TwitterWCFService/?wsdl=wsdl0" />
+    <MetadataFile FileName="item41.xsd" MetadataType="Schema" ID="a907ecb8-11f3-4118-b100-4911ecf9287d" SourceId="1" SourceUrl="http://localhost:8080/TwitterWCFService/?xsd=xsd2" />
+    <MetadataFile FileName="item42.xsd" MetadataType="Schema" ID="fde5db80-0bdb-409f-9cdf-81c11f1f3f7c" SourceId="1" SourceUrl="http://localhost:8080/TwitterWCFService/?xsd=xsd1" />
+    <MetadataFile FileName="item43.xsd" MetadataType="Schema" ID="39a0d576-8fa9-432b-aa47-62e7e0aa8bcf" SourceId="1" SourceUrl="http://localhost:8080/TwitterWCFService/?xsd=xsd0" />
+    <MetadataFile FileName="TwitterService1.wsdl" MetadataType="Wsdl" ID="36eaf2a6-16cd-495b-998a-9320e6675d7f" SourceId="1" SourceUrl="http://localhost:8080/TwitterWCFService/?wsdl" />
+    <MetadataFile FileName="item1.disco" MetadataType="Disco" ID="a4aba07f-041e-4b87-ba98-36128628b879" SourceId="1" SourceUrl="http://localhost:8080/TwitterWCFService/?disco" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>
